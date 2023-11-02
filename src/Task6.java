@@ -10,10 +10,10 @@ public class Task6 {
         System.out.println("Ввдите количестов метров для конвертации:");
 
         //Объект для считываения кол-ва метров
-        Scanner scannerMetr= new Scanner(System.in);
+        Scanner scannerMeter= new Scanner(System.in);
 
         //Кол-во метров
-        int meters = scannerMetr.nextInt();
+        int meters = scannerMeter.nextInt();
 
         //Приглашение ввести ед. измерения
         System.out.println("Введите цифру, соответствующую единице измерения, в которую нужно перевести метры.\n" +
@@ -49,9 +49,5 @@ public class Task6 {
         }
 
         System.out.println(strRes);
-
-
-
-
     }
 }
