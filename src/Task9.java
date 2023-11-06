@@ -1,11 +1,5 @@
 
-import javax.sql.RowSet;
-import java.sql.Array;
-import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.function.IntPredicate;
-import java.util.function.Predicate;
 
 public class Task9 {
 
@@ -43,7 +37,7 @@ public class Task9 {
         //В цикле считываем числа последовательности
         while (scanner1.hasNextInt()){
            array[i] = scanner1.nextInt();
-           System.out.println(String.valueOf(array[i]) + " " + i);
+           System.out.println(array[i] + " " + i);
            i++;
         }
 
@@ -67,9 +61,5 @@ public class Task9 {
         System.out.println("Количество положительных элементов последовательности - " + countOfPositive);
         System.out.println("Количество отрицательных элементов последовательности - " + countOfNegative);
         System.out.println("Количество нулей в последовательности - " + countOfZero);
-
-
-        //Вывод массива
-        //System.out.println(Arrays.toString(array));
     }
 }

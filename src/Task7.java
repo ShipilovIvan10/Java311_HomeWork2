@@ -24,11 +24,11 @@ public class Task7 {
             a = c;
         }
 
-        while (a < b) {
+        while (a <= b) {
             if (a % 2 == 1) {
                 strResult.append(a).append(" ");
-                a++;
             }
+            a++;
         }
 
         System.out.println("Нечётные числа в указанном диапазоне: " + strResult);
