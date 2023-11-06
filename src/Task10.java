@@ -1,9 +1,5 @@
 import java.util.*;
 import java.util.function.*;
-import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
-import java.util.stream.Stream;
 
 public class Task10 {
     public static void main(String[] args) {
@@ -35,22 +31,43 @@ public class Task10 {
             array[i] = scanner.nextInt();
         }
 
-        IntPredicate intPredicate = new IntPredicate() {
+        IntPredicate intPredicateEven = new IntPredicate() {
             @Override
             public boolean test(int value) {
-                return value%2==0;
+                return value % 2 == 0;
+            }
+        };
+
+        IntPredicate intPredicateOdd = new IntPredicate() {
+            @Override
+            public boolean test(int value) {
+                return value % 2 != 0;
             }
         };
 
         //Массив результат
-        int[] arrayResult = new int[count];
+        int[] arrayResultEven = Arrays.stream(array).filter(intPredicateEven).toArray();
+        int[] arrayResultOdd = Arrays.stream(array).filter(intPredicateOdd).toArray();
 
+        System.out.println("Подпоследовательность чётных чисел: " + Arrays.toString(arrayResultEven));
+        System.out.println("Подпоследовательность нечётных чисел: " + Arrays.toString(arrayResultOdd));
 
-        arrayResult = Arrays.stream(array).filter(intPredicate).toArray();
+        int[] arrayPositive = new int[count];
+        int[] arrayNegative = new int[count];
 
-        System.out.println(Arrays.toString(arrayResult));
-      
+        int countPositive = 0;
+        int countNegetive = 0;
 
+        for (int i = 0; i<array.length; i++) {
+            if (array[i] > 0){
+                arrayPositive[countPositive++] = array[i];
+            } else if (array[i] < 0) {
+                arrayNegative[countNegetive++] = array[i];
+            }
+        }
+
+        System.out.println("Подпоследовательность положительных чисел: " + Arrays.toString(arrayPositive));
+        System.out.println("Подпоследовательность отрицательных чисел: " + Arrays.toString(arrayNegative));
 
     }
 
